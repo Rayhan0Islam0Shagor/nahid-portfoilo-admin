@@ -1,0 +1,30 @@
+{
+  "name": "nahid-admin",
+  "version": "1.0.0",
+  "description": "Nahid Admin Dashboard - Fullstack Application",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:frontend",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "build:backend": "cd backend && npm install",
+    "start": "cd backend && npm start",
+    "start:single": "cd backend && npm run start:single",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "vercel:dev": "vercel dev",
+    "vercel:deploy": "vercel --prod",
+    "vercel:deploy:preview": "vercel",
+    "vercel:build": "npm run build:frontend && npm run build:backend",
+    "deploy:dev": "npm run vercel:build && vercel",
+    "deploy:prod": "npm run vercel:build && vercel --prod"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
